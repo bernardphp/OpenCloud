@@ -2,7 +2,7 @@
 
 This driver implements the Queues part of Rackspace or other OpenStack-based cloud providers, using 
 [php-opencloud](https://github.com/rackspace/php-opencloud). It supports prefetching messages, which reduces the number 
-of HTTP requests. It also passing a list of known queues to the constructor. Passing known queue names saves an HTTP 
+of HTTP requests. It also supports passing a list of known queues to the constructor. Passing known queue names saves an HTTP 
 request to the provider.
 
 For full details on using Bernard the [documentation](http://bernard.readthedocs.io).
@@ -27,7 +27,7 @@ be greater than 50 seconds.
 Install via [Composer](https://getcomposer.org):
 
 ```
-composer require kynx/bernard-opencloud
+composer require bernard/OpenCloud
 ```
 
 Note that the current version of php-opencloud has a dependency on Guzzle 3. This will cause a warning when installing.
@@ -38,7 +38,7 @@ once it is stable.
 ## Quickstart
 
 ```php
-use Kynx\Bernard\Driver\OpenCloudDriver;
+use Bernard\Driver\OpenCloudDriver;
 use OpenCloud\Rackspace;
 
 $client = new Rackspace(Rackspace::US_IDENTITY_ENDPOINT, array(
