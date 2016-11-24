@@ -1,0 +1,5 @@
+HTTP/1.1 204 No Content
+Server: nginx/1.4.6 (Ubuntu)
+Date: Tue, 22 Nov 2016 17:35:56 GMT
+Connection: keep-alive
+content-location: /v1/queues/test-queue

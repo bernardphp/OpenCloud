@@ -1,0 +1,8 @@
+HTTP/1.1 201 Created
+Server: nginx/1.4.6 (Ubuntu)
+Content-Type: application/json; charset=utf-8
+Content-Length: 302
+Connection: keep-alive
+location: /v1/queues/test-queue/claims/5834936a8c12027b4487f256
+
+[{"body": {"foo": "bar"}, "age": 2, "href": "/v1/queues/test-queue/messages/583493686c74553408d8f01c?claim_id=5834936a8c12027b4487f256", "ttl": 86400}, {"body": {"bar": "baz"}, "age": 1, "href": "/v1/queues/test-queue/messages/58349369aa19c402063f963f?claim_id=5834936a8c12027b4487f256", "ttl": 86400}]

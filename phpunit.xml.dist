@@ -1,0 +1,42 @@
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false"
+         strict="true"
+         bootstrap="vendor/autoload.php">
+
+    <testsuites>
+        <testsuite name="Bernard Opencloud TestSuite">
+            <directory>./test/</directory>
+        </testsuite>
+    </testsuites>
+
+    <groups>
+        <exclude>
+            <group>integration</group>
+        </exclude>
+    </groups>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+
+    <php>
+        <!-- if RACKSPACE_API_KEY is not set live rackspace tests will be skipped -->
+        <env name="RACKSPACE_AUTH_URL" value="https://lon.identity.api.rackspacecloud.com/v2.0/" />
+        <env name="RACKSPACE_REGION" value="LON" />
+        <env name="RACKSPACE_URL_TYPE" value="publicURL" />
+        <env name="RACKSPACE_USERNAME" value="" />
+        <env name="RACKSPACE_API_KEY" value="" />
+        <env name="QUEUE_NAME" value="test-queue" />
+        <!-- set to true to log API requests to stderr -->
+        <env name="DEBUG_API_REQUESTS" />
+    </php>
+</phpunit>

@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Tue, 22 Nov 2016 17:59:49 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 117
+Connection: keep-alive
+content-location: /v1/queues/test-queue/messages?ids=58348795aa19c4020717edd4&limit=10
+
+[{"body": {"foo": "bar"}, "age": 0, "href": "/v1/queues/test-queue/messages/58348795aa19c4020717edd4", "ttl": 43200}]

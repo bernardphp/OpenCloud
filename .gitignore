@@ -1,0 +1,5 @@
+.idea
+OpenCloud.iml
+phpunit.xml
+/coverage
+/vendor
