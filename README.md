@@ -5,7 +5,7 @@ This driver implements the Queues part of Rackspace or other OpenStack-based clo
 of HTTP requests. It also supports passing a list of known queues to the constructor. Passing known queue names saves an HTTP 
 request to the provider.
 
-For full details on using Bernard the [documentation](http://bernard.readthedocs.io).
+For full details on using Bernard see the [documentation](http://bernard.readthedocs.io).
 
 For full information on Opencloud Queues, refer to the [php-opencloud](http://docs.php-opencloud.com/en/latest/services/queues/index.html)
 documentation.

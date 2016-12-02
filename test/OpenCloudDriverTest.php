@@ -237,12 +237,13 @@ class OpenCloudDriverTest extends TestCase
         $this->assertEquals(204, $response->getStatusCode());
     }
 
+    /**
+     * @expectedException \Guzzle\Http\Exception\BadResponseException
+     */
     public function testRemoveNonexistentQueue()
     {
         $this->addResponses('404');
         $this->driver->removeQueue('test-queue');
-        $response = $this->getLastRequest()->getResponse();
-        $this->assertEquals(404, $response->getStatusCode());
     }
 
     /**

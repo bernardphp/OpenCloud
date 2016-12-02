@@ -117,7 +117,7 @@ class OpenCloudDriver extends AbstractPrefetchDriver
     /**
      * {@inheritDoc}
      */
-    public function popMessage($queueName, $interval = 5)
+    public function popMessage($queueName, $duration = 5)
     {
         /* @var Message $claim */
         if ($message = $this->cache->pop($queueName)) {
@@ -126,7 +126,7 @@ class OpenCloudDriver extends AbstractPrefetchDriver
 
         $queue = $this->getQueue($queueName);
 
-        $runtime = microtime(true) + $interval;
+        $runtime = microtime(true) + $duration;
         while (microtime(true) < $runtime) {
             if ($claims = $this->claimMessages($queue)) {
                 foreach ($claims as $claim) {
@@ -140,7 +140,7 @@ class OpenCloudDriver extends AbstractPrefetchDriver
             }
 
             //sleep for 10 ms
-            usleep(1000);
+            usleep(10000);
         }
 
         return [null, null];
@@ -187,14 +187,8 @@ class OpenCloudDriver extends AbstractPrefetchDriver
      */
     public function removeQueue($queueName)
     {
-        try {
-            $queue = $this->getQueue($queueName, false);
-            $queue->delete();
-        } catch (BadResponseException $e) {
-            if ($e->getResponse()->getStatusCode() != 404) {
-                throw $e;
-            }
-        }
+        $queue = $this->getQueue($queueName, false);
+        $queue->delete();
     }
 
     /**
@@ -229,17 +223,20 @@ class OpenCloudDriver extends AbstractPrefetchDriver
      */
     private function getQueue($name, $create = true)
     {
-        if (empty($this->queues[$name])) {
-            try {
-                $this->queues[$name] = $this->service->getQueue($name);
-            } catch (BadResponseException $e) {
-                if ($create && $e->getResponse()->getStatusCode() == 404) {
-                    $this->queues[$name] = $this->service->createQueue($name);
-                } else {
-                    throw $e;
-                }
+        if (isset($this->queues[$name])) {
+            return $this->queues[$name];
+        }
+
+        try {
+            $this->queues[$name] = $this->service->getQueue($name);
+        } catch (BadResponseException $e) {
+            if ($create && $e->getResponse()->getStatusCode() == 404) {
+                $this->queues[$name] = $this->service->createQueue($name);
+            } else {
+                throw $e;
             }
         }
+
         return $this->queues[$name];
     }
 

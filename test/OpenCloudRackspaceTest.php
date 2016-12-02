@@ -327,6 +327,7 @@ class OpenCloudRackspaceTest extends TestCase
     }
 
     /**
+     * @expectedException \Guzzle\Http\Exception\BadResponseException
      * @group integration
      */
     public function testRemoveNonexistentQueue()
@@ -336,7 +337,6 @@ class OpenCloudRackspaceTest extends TestCase
         $this->driver->removeQueue('test-queue');
 
         $this->removeDebugger();
-        $this->assertFalse($this->service->hasQueue($this->queueName));
     }
 
     /**
