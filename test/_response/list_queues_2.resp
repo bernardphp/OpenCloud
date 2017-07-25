@@ -1,0 +1,16 @@
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Content-Location: /v1/queues
+
+{
+  "queues": [
+    {
+      "href": "/v1/queues/036b184b28fcb548349af623079119c6a966cbc",
+      "name": "036b184b28fcb548349af623079119c6a966cbc"
+    },
+    {
+      "href": "/v1/queues/0441f28617afbdecf4887e635fd0777fb3cec38",
+      "name": "foo"
+    }
+  ]
+}

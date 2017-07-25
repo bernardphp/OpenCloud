@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Wed, 23 Nov 2016 13:06:28 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 325
+Connection: keep-alive
+content-location: /v1/queues/test-queue/messages?marker=10&limit=10
+
+{"messages": [{"body": {"num": 10}, "age": 1, "href": "/v1/queues/test-queue/messages/583594538c12021024f83df3", "ttl": 60}, {"body": {"num": 11}, "age": 1, "href": "/v1/queues/test-queue/messages/583594538c12021024f83df4", "ttl": 60}], "links": [{"href": "/v1/queues/test-queue/messages?marker=12&limit=10", "rel": "next"}]}

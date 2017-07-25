@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Wed, 23 Nov 2016 13:06:27 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 1203
+Connection: keep-alive
+content-location: /v1/queues/test-queue/messages?limit=10
+
+{"messages": [{"body": {"num": 0}, "age": 1, "href": "/v1/queues/test-queue/messages/583594528c12027b4489a729", "ttl": 60}, {"body": {"num": 1}, "age": 1, "href": "/v1/queues/test-queue/messages/583594528c12027b4489a72a", "ttl": 60}, {"body": {"num": 2}, "age": 1, "href": "/v1/queues/test-queue/messages/583594528c12027b4489a72b", "ttl": 60}, {"body": {"num": 3}, "age": 1, "href": "/v1/queues/test-queue/messages/583594528c12027b4489a72c", "ttl": 60}, {"body": {"num": 4}, "age": 1, "href": "/v1/queues/test-queue/messages/583594528c12027b4489a72d", "ttl": 60}, {"body": {"num": 5}, "age": 1, "href": "/v1/queues/test-queue/messages/583594528c12027b4489a72e", "ttl": 60}, {"body": {"num": 6}, "age": 1, "href": "/v1/queues/test-queue/messages/583594528c12027b4489a72f", "ttl": 60}, {"body": {"num": 7}, "age": 1, "href": "/v1/queues/test-queue/messages/583594528c12027b4489a730", "ttl": 60}, {"body": {"num": 8}, "age": 1, "href": "/v1/queues/test-queue/messages/583594528c12027b4489a731", "ttl": 60}, {"body": {"num": 9}, "age": 1, "href": "/v1/queues/test-queue/messages/583594528c12027b4489a732", "ttl": 60}], "links": [{"href": "/v1/queues/test-queue/messages?marker=10&limit=10", "rel": "next"}]}

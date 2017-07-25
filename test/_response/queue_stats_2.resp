@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Tue, 22 Nov 2016 17:35:56 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 317
+Connection: keep-alive
+content-location: /v1/queues/test-queue/stats
+
+{"messages": {"claimed": 0, "oldest": {"age": 1, "href": "/v1/queues/php-unit-test-queue/messages/583481fb8c12020fcbbf4c10", "created": "2016-11-22T17:35:55Z"}, "total": 2, "newest": {"age": 1, "href": "/v1/queues/php-unit-test-queue/messages/583481fb8c12020fcbbf4c11", "created": "2016-11-22T17:35:55Z"}, "free": 2}}
